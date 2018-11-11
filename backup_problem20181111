@@ -1,0 +1,29 @@
+2018/11/11 
+
+I got a issue when update or upgrade 
+
+'http://dl.google.com/linux/earth/deb stable InRelease' doesn't support architecture 'i386'
+
+Therefore I need to solve this problem. long time later I found simillar issuee on Stackoverflow 
+
+https://askubuntu.com/questions/741410/skipping-acquire-of-configured-file-main-binary-i386-packages-as-repository-x
+
+Solver said, have to edit document  in /etc/apt/sources.list.d/google-chrome.list
+
+MY cause of problem is in google-earth-pro.lit not in google-chrome.list
+
+cat /etc/apt.sources.list.d/google-earth-pro.list
+and then add [arch-amd64] between 'deb' 'http://dl.google.com/linux/earth/deb/ stable main'
+
+before : deb' 'http://dl.google.com/linux/chrome/deb/ stable main'
+
+after : deb [arch-amd64] between 'deb' 'http://dl.google.com/linux/earth/deb/ stable main'
+
+--------------------------------------------------------------------------------
+
+I couldn't backing up to another hardrive for long time 
+I don't know why. tried to solve hard. finally change  authority of another hard drive 
+
+ctrl + l is know where is in folder. 
+chmod 777
+chown -R username:usernmae /media/path
